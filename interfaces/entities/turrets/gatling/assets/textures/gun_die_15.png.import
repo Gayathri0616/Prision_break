@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cogqhdexskqv7"
-path="res://.godot/imported/gun_die_15.png-0c0fcce368490ae708f1a16d44b2afca.ctex"
+path="res://.godot/imported/gun_die_15.png-7b2ea8e4d287b508e05e029bfc2bc8d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/turrets/gatling/assets/textures/gun_die_15.png"
-dest_files=["res://.godot/imported/gun_die_15.png-0c0fcce368490ae708f1a16d44b2afca.ctex"]
+source_file="res://interfaces/entities/turrets/gatling/assets/textures/gun_die_15.png"
+dest_files=["res://.godot/imported/gun_die_15.png-7b2ea8e4d287b508e05e029bfc2bc8d5.ctex"]
 
 [params]
 

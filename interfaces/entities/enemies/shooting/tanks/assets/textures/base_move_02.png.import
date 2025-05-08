@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blsnswwbrmjvu"
-path="res://.godot/imported/base_move_02.png-9a958bea3e7ecc9bc864d3b65c53597f.ctex"
+path="res://.godot/imported/base_move_02.png-a96e497def219f952e5c7394bf725a10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/shooting/tanks/assets/textures/base_move_02.png"
-dest_files=["res://.godot/imported/base_move_02.png-9a958bea3e7ecc9bc864d3b65c53597f.ctex"]
+source_file="res://interfaces/entities/enemies/shooting/tanks/assets/textures/base_move_02.png"
+dest_files=["res://.godot/imported/base_move_02.png-a96e497def219f952e5c7394bf725a10.ctex"]
 
 [params]
 

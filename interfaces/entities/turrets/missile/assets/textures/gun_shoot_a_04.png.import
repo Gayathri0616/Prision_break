@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcrdindfnanfp"
-path="res://.godot/imported/gun_shoot_a_04.png-219bb1a29c47566f2fbcc21ce9d786dc.ctex"
+path="res://.godot/imported/gun_shoot_a_04.png-7c45ebd12dd55197054a345bc9c1bec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/turrets/missile/assets/textures/gun_shoot_a_04.png"
-dest_files=["res://.godot/imported/gun_shoot_a_04.png-219bb1a29c47566f2fbcc21ce9d786dc.ctex"]
+source_file="res://interfaces/entities/turrets/missile/assets/textures/gun_shoot_a_04.png"
+dest_files=["res://.godot/imported/gun_shoot_a_04.png-7c45ebd12dd55197054a345bc9c1bec8.ctex"]
 
 [params]
 

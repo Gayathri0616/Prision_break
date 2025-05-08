@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da37u4ah5hxaw"
-path="res://.godot/imported/gun_idle_00.png-dab02a7f886ef91ad4b561ae9b488279.ctex"
+path="res://.godot/imported/gun_idle_00.png-9647f7802b8115cde44be551b2b6c276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/shooting/tanks/assets/textures/gun_idle_00.png"
-dest_files=["res://.godot/imported/gun_idle_00.png-dab02a7f886ef91ad4b561ae9b488279.ctex"]
+source_file="res://interfaces/entities/enemies/shooting/tanks/assets/textures/gun_idle_00.png"
+dest_files=["res://.godot/imported/gun_idle_00.png-9647f7802b8115cde44be551b2b6c276.ctex"]
 
 [params]
 
