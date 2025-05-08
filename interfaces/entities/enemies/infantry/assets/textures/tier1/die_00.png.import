@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmyjeq3xr2bsw"
-path="res://.godot/imported/die_00.png-e24b8d1d41e0e394a03a1b74c5533938.ctex"
+path="res://.godot/imported/die_00.png-39327dfed8e1c752f01e9a3ff0d6dad3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/infantry/assets/textures/tier1/die_00.png"
-dest_files=["res://.godot/imported/die_00.png-e24b8d1d41e0e394a03a1b74c5533938.ctex"]
+source_file="res://interfaces/entities/enemies/infantry/assets/textures/tier1/die_00.png"
+dest_files=["res://.godot/imported/die_00.png-39327dfed8e1c752f01e9a3ff0d6dad3.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfaeh16vfpdtl"
-path="res://.godot/imported/tower_die_fx_01.png-a17b97bc0647b71d11e47d80eda1f34f.ctex"
+path="res://.godot/imported/tower_die_fx_01.png-05f0b2d253e4092ee93bb6229ea61a67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/explosion_vfx/assets/textures/tower/tower_die_fx_01.png"
-dest_files=["res://.godot/imported/tower_die_fx_01.png-a17b97bc0647b71d11e47d80eda1f34f.ctex"]
+source_file="res://interfaces/entities/explosion_vfx/assets/textures/tower/tower_die_fx_01.png"
+dest_files=["res://.godot/imported/tower_die_fx_01.png-05f0b2d253e4092ee93bb6229ea61a67.ctex"]
 
 [params]
 

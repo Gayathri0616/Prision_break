@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlbmideo1w7bf"
-path="res://.godot/imported/body_die_09.png-7e52820ca167d8a4d61f21a90f6e6730.ctex"
+path="res://.godot/imported/body_die_09.png-1c1d28a48eedb81fc1bb1c348434ae33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/shooting/helicopters/assets/textures/body_die_09.png"
-dest_files=["res://.godot/imported/body_die_09.png-7e52820ca167d8a4d61f21a90f6e6730.ctex"]
+source_file="res://interfaces/entities/enemies/shooting/helicopters/assets/textures/body_die_09.png"
+dest_files=["res://.godot/imported/body_die_09.png-1c1d28a48eedb81fc1bb1c348434ae33.ctex"]
 
 [params]
 

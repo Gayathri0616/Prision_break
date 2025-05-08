@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq8jlct5t46lx"
-path="res://.godot/imported/hit_vfx_00.png-ac3335ab5d6b51c25cf8c171120613c9.ctex"
+path="res://.godot/imported/hit_vfx_00.png-c0a3947bf8bf2d0e2f4c1df1e3d09d33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/projectiles/assets/textures/bullet/hit_vfx_00.png"
-dest_files=["res://.godot/imported/hit_vfx_00.png-ac3335ab5d6b51c25cf8c171120613c9.ctex"]
+source_file="res://interfaces/entities/projectiles/assets/textures/bullet/hit_vfx_00.png"
+dest_files=["res://.godot/imported/hit_vfx_00.png-c0a3947bf8bf2d0e2f4c1df1e3d09d33.ctex"]
 
 [params]
 

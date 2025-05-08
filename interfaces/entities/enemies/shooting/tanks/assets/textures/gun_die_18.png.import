@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k0jvikkg7npx"
-path="res://.godot/imported/gun_die_18.png-b48e2722c4af39b736b7cf8dcbc2fa0f.ctex"
+path="res://.godot/imported/gun_die_18.png-62e161e66d04f2251fcf70e9c17c0968.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/shooting/tanks/assets/textures/gun_die_18.png"
-dest_files=["res://.godot/imported/gun_die_18.png-b48e2722c4af39b736b7cf8dcbc2fa0f.ctex"]
+source_file="res://interfaces/entities/enemies/shooting/tanks/assets/textures/gun_die_18.png"
+dest_files=["res://.godot/imported/gun_die_18.png-62e161e66d04f2251fcf70e9c17c0968.ctex"]
 
 [params]
 

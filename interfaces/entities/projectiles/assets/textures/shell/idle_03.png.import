@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3dqs6ib0wsxx"
-path="res://.godot/imported/idle_03.png-c3cf5019a6ec1683c3fe98bac1735d0f.ctex"
+path="res://.godot/imported/idle_03.png-7f8c011808670bf83992bbd17833a517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/projectiles/assets/textures/shell/idle_03.png"
-dest_files=["res://.godot/imported/idle_03.png-c3cf5019a6ec1683c3fe98bac1735d0f.ctex"]
+source_file="res://interfaces/entities/projectiles/assets/textures/shell/idle_03.png"
+dest_files=["res://.godot/imported/idle_03.png-7f8c011808670bf83992bbd17833a517.ctex"]
 
 [params]
 

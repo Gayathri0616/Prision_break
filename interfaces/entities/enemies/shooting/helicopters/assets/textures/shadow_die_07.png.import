@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdescjrsrtark"
-path="res://.godot/imported/shadow_die_07.png-4d186500f421827ad2587c55b50d96aa.ctex"
+path="res://.godot/imported/shadow_die_07.png-2b9aa127e63f49669d29371559b948af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_07.png"
-dest_files=["res://.godot/imported/shadow_die_07.png-4d186500f421827ad2587c55b50d96aa.ctex"]
+source_file="res://interfaces/entities/enemies/shooting/helicopters/assets/textures/shadow_die_07.png"
+dest_files=["res://.godot/imported/shadow_die_07.png-2b9aa127e63f49669d29371559b948af.ctex"]
 
 [params]
 

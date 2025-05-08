@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uyxv7paj6lc3"
-path="res://.godot/imported/die_fx_19.png-53a292e5dc05a90ef62ab3c9d0f4f551.ctex"
+path="res://.godot/imported/die_fx_19.png-09ccb49c1adfb4995ae25bebe0fad994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/explosion_vfx/assets/textures/default/die_fx_19.png"
-dest_files=["res://.godot/imported/die_fx_19.png-53a292e5dc05a90ef62ab3c9d0f4f551.ctex"]
+source_file="res://interfaces/entities/explosion_vfx/assets/textures/default/die_fx_19.png"
+dest_files=["res://.godot/imported/die_fx_19.png-09ccb49c1adfb4995ae25bebe0fad994.ctex"]
 
 [params]
 
