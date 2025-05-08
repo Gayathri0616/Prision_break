@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://covoab3tdrgeg"]
+
+[ext_resource type="Script" uid="uid://e1c6vhurtojp" path="res://scenes/maps/map.gd" id="1_nrbg7"]
+[ext_resource type="TileSet" uid="uid://qkm7w8f0dolu" path="res://scenes/maps/assets/tilesets/field.tres" id="2_h2epk"]
+[ext_resource type="PackedScene" uid="uid://bpnhw7y2qno58" path="res://scenes/maps/camera2D/camera2D.tscn" id="3_0rhbr"]
+[ext_resource type="PackedScene" uid="uid://b8g10g5id7xy5" path="res://scenes/maps/objective/objective.tscn" id="4_4ad64"]
+[ext_resource type="PackedScene" uid="uid://bdyht7kyjay3y" path="res://scenes/maps/spawner/spawner.tscn" id="5_n3p8r"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2mvwc"]
+resource_local_to_scene = true
+vertices = PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(256, -512, 6272, -512, 6272, 3328, 256, 3328)])
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_nrbg7")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_h2epk")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(327666, 327682, 8, 327667, 327682, 8, 327668, 327682, 8, 327669, 327682, 8, 327670, 327682, 8, 327671, 327682, 8, 327672, 327682, 8, 327673, 327682, 8, 327674, 327682, 8, 327675, 327682, 8, 327676, 327682, 8, 327677, 327682, 8, 393213, 327682, 8, 393214, 327682, 8, 393215, 327682, 8, 327680, 327682, 8, 327681, 327682, 8, 327682, 327682, 8, 327683, 327682, 8, 327684, 327682, 8, 327685, 327682, 8, 327686, 327682, 8, 327687, 327682, 8, 327688, 327682, 8, 327689, 327682, 8)
+layer_1/name = "Ground Objects"
+
+[node name="AircraftNavRegion" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_2mvwc")
+navigation_layers = 2
+
+[node name="Camera2D" parent="." instance=ExtResource("3_0rhbr")]
+
+[node name="Objective" parent="." instance=ExtResource("4_4ad64")]
+
+[node name="Spawner" parent="." instance=ExtResource("5_n3p8r")]
+
+[editable path="Spawner"]
