@@ -1,5 +1,5 @@
 @tool
-class_name EnemyShooter
+class_name Shooter
 extends Node2D
 # Class aggregated by those entities which can shoot, e.g. turrets or tanks.
 # We are using component-based programming principles by leveraging Godot's

@@ -1,4 +1,4 @@
-class_name EnemyProjectile
+class_name Projectile
 extends Area2D
 # This class extends the Area2D node because we don't need advanced
 # physics or player-controlled movement.
