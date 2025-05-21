@@ -10,12 +10,11 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_m08r3"]
 frames = 3
-fps = 8.0
 frame_0/texture = ExtResource("2_5apyx")
 frame_1/texture = ExtResource("3_dcw82")
-frame_1/delay_sec = 0.0
+frame_1/duration = 1.0
 frame_2/texture = ExtResource("4_x3yx5")
-frame_2/delay_sec = 0.0
+frame_2/duration = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwll"]
 radius = 3.0
@@ -24,7 +23,16 @@ height = 9.99999
 [sub_resource type="SpriteFrames" id="SpriteFrames_mb2m8"]
 resource_local_to_scene = true
 animations = [{
-"frames": [ExtResource("5_pycns"), ExtResource("6_k3bh3"), ExtResource("7_vfvte"), null],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pycns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k3bh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vfvte")
+}],
 "loop": false,
 "name": &"hit",
 "speed": 12.0

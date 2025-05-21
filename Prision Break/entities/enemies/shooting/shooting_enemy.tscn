@@ -1,16 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://bl2so1n5mvkym"]
 
 [ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/states/move.gd" id="3_sa0ih"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/states/die.gd" id="5_ui7r8"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot.gd" id="6_la5et"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot_still.gd" id="7_o658i"]
+[ext_resource type="Script" uid="uid://c1w8fi6tbnrgg" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
+[ext_resource type="Script" uid="uid://bt7kv0ge3pgev" path="res://entities/enemies/shooting/states/move.gd" id="3_sa0ih"]
+[ext_resource type="Script" uid="uid://kx8m327y66lx" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
+[ext_resource type="Script" uid="uid://v8n632qkrfax" path="res://entities/enemies/shooting/states/die.gd" id="5_ui7r8"]
+[ext_resource type="Script" uid="uid://cyg30aeoocm3b" path="res://entities/enemies/shooting/states/shoot.gd" id="6_la5et"]
+[ext_resource type="Script" uid="uid://dx74fyklfl3tw" path="res://entities/enemies/shooting/states/shoot_still.gd" id="7_o658i"]
 [ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="8_dv8tr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tr4ns"]
-load_path = "res://.godot/imported/base_idle_00.png-66194b3c7a6a32f9a48297bf5df74c88.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54mwn"]
 resource_local_to_scene = true
@@ -54,7 +53,6 @@ resource_local_to_scene = true
 radius = 65.9697
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awfie"]
-load_path = "res://.godot/imported/gun_idle_00.png-ba58bceb44646f214772dcf01eb532ca.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pwnph"]
 resource_local_to_scene = true

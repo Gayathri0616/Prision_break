@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdyht7kyjay3y"]
 
-[ext_resource type="Script" path="res://scenes/maps/spawner/spawner.gd" id="1_hhcuf"]
-[ext_resource type="Script" path="res://scenes/maps/spawner/marker2d.gd" id="2_m2sbv"]
+[ext_resource type="Script" uid="uid://cuwvq3x2xj6i8" path="res://scenes/maps/spawner/spawner.gd" id="1_hhcuf"]
+[ext_resource type="Script" uid="uid://bor7feves4u1e" path="res://scenes/maps/spawner/marker2d.gd" id="2_m2sbv"]
 
 [node name="Spawner" type="Node2D"]
 z_index = 10

@@ -21,7 +21,31 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65d1v"]
 animations = [{
-"frames": [ExtResource("2_us1ld"), ExtResource("3_bmrip"), ExtResource("4_6ih2m"), ExtResource("5_mfdcg"), ExtResource("6_2pw3q"), ExtResource("7_nahaf"), ExtResource("8_vswck"), ExtResource("9_6jx2e")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_us1ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bmrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ih2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mfdcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pw3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nahaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vswck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6jx2e")
+}],
 "loop": false,
 "name": &"die",
 "speed": 12.0
@@ -31,12 +55,39 @@ animations = [{
 "name": &"hit",
 "speed": 5.0
 }, {
-"frames": [ExtResource("2_j37t7")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j37t7")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("3_x1adw"), ExtResource("4_jc6u6"), ExtResource("5_b2h8l"), ExtResource("6_4n4bj"), ExtResource("7_0id6p"), ExtResource("8_qrgjc"), ExtResource("9_251sx"), ExtResource("10_s43qq")],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x1adw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jc6u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b2h8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4n4bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0id6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qrgjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_251sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s43qq")
+}],
 "loop": true,
 "name": &"move",
 "speed": 9.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c00tw3b8wgm8y"]
 
-[ext_resource type="Script" path="res://scenes/maps/turret_slot/turret_slot.gd" id="1_skyup"]
+[ext_resource type="Script" uid="uid://d8wwfvt5yeja" path="res://scenes/maps/turret_slot/turret_slot.gd" id="1_skyup"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_h7gu8"]
 [ext_resource type="PackedScene" uid="uid://bjphbghinurfr" path="res://interfaces/UI/turret_popup/turret_popup.tscn" id="3_7p0hi"]
 [ext_resource type="PackedScene" uid="uid://bj4pwhsawsoqx" path="res://interfaces/UI/turret_actions/turret_actions.tscn" id="4_hrs4w"]

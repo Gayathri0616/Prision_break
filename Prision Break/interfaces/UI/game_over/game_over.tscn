@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://jmm71rgqfd1r"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_42mgb"]
-[ext_resource type="Script" path="res://interfaces/UI/game_over/game_over.gd" id="2_a4bhp"]
+[ext_resource type="Script" uid="uid://vryi7c6nx2qi" path="res://interfaces/UI/game_over/game_over.gd" id="2_a4bhp"]
 [ext_resource type="Texture2D" uid="uid://bh2j3w7sn76or" path="res://interfaces/UI/game_over/assets/textures/gameover.png" id="2_rdkds"]
 
 [sub_resource type="Animation" id="Animation_iswqo"]
@@ -157,8 +157,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_svvxd"]
 _data = {
-"RESET": SubResource("Animation_iswqo"),
-"show": SubResource("Animation_0n8h5")
+&"RESET": SubResource("Animation_iswqo"),
+&"show": SubResource("Animation_0n8h5")
 }
 
 [node name="GameOver" type="PanelContainer"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xovv4wa0ovh6"
-path="res://.godot/imported/cover_notitles_cropped.jpg-1999a74287c725bb9c0ae6f9853e0810.ctex"
+uid="uid://dojkc3mowcev5"
+path="res://.godot/imported/gun_shoot_04.png-bb9a35c1c5a6f362cab8c4864eaa7e50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/UI/menu/assets/textures/cover_notitles_cropped.jpg"
-dest_files=["res://.godot/imported/cover_notitles_cropped.jpg-1999a74287c725bb9c0ae6f9853e0810.ctex"]
+source_file="res://entities/turrets/gatling/assets/textures/gun_shoot_04.png"
+dest_files=["res://.godot/imported/gun_shoot_04.png-bb9a35c1c5a6f362cab8c4864eaa7e50.ctex"]
 
 [params]
 

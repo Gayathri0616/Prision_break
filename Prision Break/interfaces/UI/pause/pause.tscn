@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dln6ttdt8iopd"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_ax0fs"]
-[ext_resource type="Script" path="res://interfaces/UI/pause/pause.gd" id="2_aeffn"]
+[ext_resource type="Script" uid="uid://bcylq3pfyeyx0" path="res://interfaces/UI/pause/pause.gd" id="2_aeffn"]
 [ext_resource type="Texture2D" uid="uid://crhpljtoq2vwr" path="res://interfaces/UI/pause/assets/textures/pause.png" id="3_t0lgw"]
 
 [sub_resource type="Animation" id="Animation_5rfcn"]
@@ -53,9 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuhf4"]
 _data = {
-"RESET": SubResource("Animation_5rfcn"),
-"hide": SubResource("Animation_1drwa"),
-"show": SubResource("Animation_1g827")
+&"RESET": SubResource("Animation_5rfcn"),
+&"hide": SubResource("Animation_1drwa"),
+&"show": SubResource("Animation_1g827")
 }
 
 [node name="Pause" type="PanelContainer"]

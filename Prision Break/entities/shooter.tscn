@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://r1b440sc0tkl"]
 
-[ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
+[ext_resource type="Script" uid="uid://c0uqce8u33mtn" path="res://entities/shooter.gd" id="1_iyj4l"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="2_31pp5"]
 [ext_resource type="Texture2D" uid="uid://djmhh26sa4xo" path="res://entities/turrets/single/assets/textures/gun_shoot_00.png" id="4_80ryh"]
 [ext_resource type="Texture2D" uid="uid://pus7ugvpejf2" path="res://entities/turrets/single/assets/textures/gun_shoot_01.png" id="5_bcu82"]
