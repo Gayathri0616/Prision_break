@@ -114,12 +114,12 @@ detector_color = Color(0, 0, 1, 0.0980392)
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_lyc1n")
-frame_progress = 0.466764
+frame_progress = 0.281386
 offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_7qxgd")
-frame_progress = 0.0805661
+frame_progress = 0.89519
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
 shape = SubResource("CircleShape2D_2wlmh")

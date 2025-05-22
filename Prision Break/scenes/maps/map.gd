@@ -1,8 +1,8 @@
 extends Node2D
 
 # Maze dimensions
-const ROWS = 25
-const COLS = 25
+const ROWS = 40
+const COLS = 30
 
 # Tilemap settings
 const WALL_TILE_ID = 0  # ID of the wall tile in your tileset
