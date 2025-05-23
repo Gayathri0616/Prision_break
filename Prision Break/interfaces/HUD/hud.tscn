@@ -44,7 +44,7 @@ mouse_filter = 2
 theme = ExtResource("2_itll1")
 
 [node name="PanelContainer" type="PanelContainer" parent="Info"]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -264.0
@@ -57,25 +57,18 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6t2jm")
 metadata/_edit_layout_mode = 1
 
 [node name="Rows" type="VBoxContainer" parent="Info/PanelContainer"]
-offset_left = 15.0
-offset_top = 45.0
-offset_right = 311.0
-offset_bottom = 128.0
+layout_mode = 2
 
 [node name="Health" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
-offset_right = 296.0
-offset_bottom = 40.0
+layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Health"]
-offset_right = 51.0
-offset_bottom = 40.0
+layout_mode = 2
 texture = ExtResource("2_mdkkp")
 stretch_mode = 3
 
 [node name="HealthBar" type="TextureProgressBar" parent="Info/PanelContainer/Rows/Health"]
-offset_left = 55.0
-offset_right = 296.0
-offset_bottom = 40.0
+layout_mode = 2
 size_flags_horizontal = 10
 value = 100.0
 texture_under = ExtResource("3_3fdlk")
@@ -83,21 +76,15 @@ texture_progress = ExtResource("4_mlvjf")
 texture_progress_offset = Vector2(4, 4)
 
 [node name="Money" type="HBoxContainer" parent="Info/PanelContainer/Rows"]
-offset_top = 44.0
-offset_right = 296.0
-offset_bottom = 83.0
+layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="Info/PanelContainer/Rows/Money"]
-offset_right = 51.0
-offset_bottom = 39.0
+layout_mode = 2
 texture = ExtResource("5_5kl3n")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Info/PanelContainer/Rows/Money"]
-offset_left = 55.0
-offset_top = 2.0
-offset_right = 296.0
-offset_bottom = 37.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_nmveo")
@@ -106,6 +93,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="WaveLabel" type="Label" parent="Info"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 8.0
 offset_right = 155.0
@@ -117,7 +105,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextWave" type="PanelContainer" parent="Info"]
-anchors_preset = 5
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -184.0
@@ -130,16 +118,11 @@ theme = ExtResource("2_itll1")
 theme_override_styles/panel = SubResource("StyleBoxTexture_nmveo")
 
 [node name="Rows" type="HBoxContainer" parent="Info/NextWave"]
-offset_left = 15.0
-offset_top = 3.0
-offset_right = 337.0
-offset_bottom = 64.0
+layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="Info/NextWave/Rows"]
-offset_top = 11.0
-offset_right = 262.0
-offset_bottom = 49.0
+layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
@@ -147,10 +130,7 @@ text = "Next wave in:"
 horizontal_alignment = 1
 
 [node name="Countdown" type="Label" parent="Info/NextWave/Rows"]
-offset_left = 282.0
-offset_top = 6.0
-offset_right = 315.0
-offset_bottom = 55.0
+layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8hx4j")
@@ -172,12 +152,16 @@ mouse_filter = 2
 
 [node name="GameOver" parent="UI" instance=ExtResource("9_vrddp")]
 visible = false
-offset_left = 469.0
-offset_top = 288.5
-offset_right = 811.0
-offset_bottom = 431.5
+layout_mode = 0
+anchors_preset = 0
 
 [node name="Pause" parent="UI" instance=ExtResource("10_h1mxi")]
 visible = false
+layout_mode = 0
+anchors_preset = 0
+offset_left = -375.0
+offset_top = 408.0
+offset_right = 375.0
+offset_bottom = 951.0
 
 [connection signal="timeout" from="Info/NextWave/Timer" to="." method="_on_timer_timeout"]

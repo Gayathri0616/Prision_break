@@ -188,10 +188,11 @@ collision_layer = 16
 script = ExtResource("1_cfv35")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_coix1")
+sprite_frames = SubResource("SpriteFrames_coix1")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 22)
 shape = SubResource("RectangleShape2D_pxjbe")
 
 [node name="Explosion" parent="." instance=ExtResource("43_ouhuc")]
