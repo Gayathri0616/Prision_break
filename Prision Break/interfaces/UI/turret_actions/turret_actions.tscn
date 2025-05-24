@@ -14,21 +14,16 @@ theme_override_constants/separation = 10
 metadata/_edit_group_ = true
 
 [node name="Replace" type="Button" parent="."]
-offset_right = 161.0
-offset_bottom = 155.0
+layout_mode = 2
 icon = ExtResource("2_lf7n4")
 icon_alignment = 1
 
 [node name="Repair" type="Button" parent="."]
-offset_top = 165.0
-offset_right = 161.0
-offset_bottom = 320.0
+layout_mode = 2
 icon = ExtResource("3_3xbmb")
 icon_alignment = 1
 
 [node name="Remove" type="Button" parent="."]
-offset_top = 330.0
-offset_right = 161.0
-offset_bottom = 485.0
+layout_mode = 2
 icon = ExtResource("4_15aaq")
 icon_alignment = 1

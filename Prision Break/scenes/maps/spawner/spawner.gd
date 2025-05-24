@@ -1,15 +1,6 @@
 @tool
 class_name Spawner
 extends Node2D
-# This scene should be a direct child of the map scene.
-# It distinguishes between "ground spawns" - i.e. where ground-based entities
-# spawn - and "air spawns". This means that ground-related markers must 
-# be inside a navigable path on the map, while the aircaft ones can be 
-# anywhere inside the aircraft's navigation polygon in the parent
-# (check the Map scene for more info).
-# To customize the spawns, in the parent scene select the spawner and make it
-# editable. At this point you can move the Marker2D nodes to the desired
-# locations. You can also duplicate and delete them at your needs.
 
 
 signal countdown_started(seconds: float)
@@ -20,14 +11,14 @@ const INITIAL_WAIT := 5.0  # amount of seconds to wait before starting a wave
 
 @export_range(0.5, 5.0, 0.5) var spawn_rate: float = 2.0
 @export var wave_count: int = 3
-@export var enemy_count: int = 10
+@export var enemy_count: int = 5
 @export_range(1, 100) var spawn_count: int = 3:  # number of spawn locations (Marker2Ds)
 	set = set_spawn_count
 @export var enemies: Dictionary = {
-	"infantry_t1": 45,  # higher probability of spawn
-	"infantry_t2": 40,
-	"tank": 15,
-	"helicopter": 5,
+	"infantry_t1": 10,  # higher probability of spawn
+	"infantry_t2": 5,
+	"tank": 3,
+	"helicopter": 2,
 }
 
 var objective_pos: Vector2
@@ -94,7 +85,7 @@ func _end_wave() -> void:
 		are_waves_finished = true
 		return
 	current_wave += 1
-	enemy_count += current_wave * 10
+	enemy_count += current_wave * 2
 	_start_wave_countdown()
 
 
