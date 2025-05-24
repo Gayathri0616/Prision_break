@@ -688,13 +688,13 @@ projectile_damage = 25
 
 [node name="Gun" parent="Shooter" index="0"]
 sprite_frames = SubResource("SpriteFrames_mdejl")
-frame_progress = 0.579303
+frame_progress = 0.580209
 offset = Vector2(0, 0)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(44, 0)
 sprite_frames = SubResource("SpriteFrames_x5y1r")
-frame_progress = 0.752425
+frame_progress = 0.753331
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
 shape = SubResource("CircleShape2D_4dh2o")
