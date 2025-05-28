@@ -20,12 +20,6 @@ tile_set = ExtResource("2_h2epk")
 format = 2
 layer_0/name = "Ground"
 layer_1/name = "Ground Objects"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array()
 
 [node name="AircraftNavRegion" type="NavigationRegion2D" parent="."]
 visible = false
@@ -37,5 +31,7 @@ navigation_layers = 2
 [node name="Objective" parent="." instance=ExtResource("4_4ad64")]
 
 [node name="Spawner" parent="." instance=ExtResource("5_n3p8r")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 
 [editable path="Spawner"]

@@ -280,8 +280,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ec7ly"]
-radius = 60.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dh2o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdejl"]
 animations = [{
@@ -657,7 +656,6 @@ animations = [{
 collision_layer = 32
 collision_mask = 39
 script = ExtResource("2_34241")
-speed = 100
 
 [node name="Move" parent="StateMachine" index="0"]
 script = ExtResource("3_wtohu")
@@ -671,7 +669,7 @@ animation = &"shoot_still"
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-14, 0)
-shape = SubResource("CircleShape2D_ec7ly")
+shape = SubResource("RectangleShape2D_4dh2o")
 
 [node name="NavigationAgent2D" parent="." index="3"]
 radius = 90.0
@@ -688,13 +686,13 @@ projectile_damage = 25
 
 [node name="Gun" parent="Shooter" index="0"]
 sprite_frames = SubResource("SpriteFrames_mdejl")
-frame_progress = 0.580209
+frame_progress = 0.39578
 offset = Vector2(0, 0)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 position = Vector2(44, 0)
 sprite_frames = SubResource("SpriteFrames_x5y1r")
-frame_progress = 0.753331
+frame_progress = 0.568903
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
 shape = SubResource("CircleShape2D_4dh2o")

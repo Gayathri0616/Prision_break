@@ -1,85 +1,86 @@
 class_name Enemy
 extends CharacterBody2D
 
-# Signals for target changes and death
+
 signal target_changed(pos: Vector2)
 signal dead
 
-# Exported variables for the Godot Inspector
 @export var rot_speed: float = 10.0
 @export var health: int = 100:
 	set = set_health
-@export var speed: int = 300
+@export var speed: int = 100
 
-# Damage dealt when reaching an objective
-var objective_damage := 10
+var objective_damage := 10  # default damage dealt when entering the objective
 
-# Variables for collision-based direction reversal
-var collision_cooldown: float = 0.5
-var collision_timer: float = 0.0
-var is_colliding: bool = false
-
-# Node references
 @onready var state_machine := $StateMachine as StateMachine
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var sprite := $Sprite2D as AnimatedSprite2D
+@onready var sprite := $Sprite2D as AnimatedSprite2D:
+	get: return $Sprite2D as AnimatedSprite2D
 @onready var collision := $CollisionShape2D as CollisionShape2D
 @onready var hud := $UI/EntityHUD as EntityHud
 
-# Initialization
+
 func _ready() -> void:
-	# Initialize HUD
+	# initialize HUD
 	hud.state_label.text = state_machine.current_state.name
 	hud.healthbar.max_value = health
 	hud.healthbar.value = health
-	# Initialize navigation agent
+	# initialize navigation agent
 	nav_agent.max_speed = speed
 
-# Physics processing for rotation and collision handling
-func _physics_process(delta: float) -> void:
-	# Update collision timer
-	if is_colliding:
-		collision_timer -= delta
-		if collision_timer <= 0:
-			is_colliding = false
-	
-	# Rotate sprite and collision shape based on velocity
-	if sprite:
-		sprite.global_rotation = _calculate_rot(sprite.global_rotation, velocity.angle(), rot_speed, delta)
-	if collision:
-		collision.global_rotation = _calculate_rot(collision.global_rotation, velocity.angle(), rot_speed, delta)
 
-# Move to a target position
+func _physics_process(delta: float) -> void:
+	# Rotate based on current velocity
+	sprite.global_rotation = _calculate_rot(sprite.global_rotation,
+			velocity.angle(), rot_speed, delta)
+	collision.global_rotation = _calculate_rot(collision.global_rotation,
+			velocity.angle(), rot_speed, delta)
+
+
 func move_to(pos: Vector2) -> void:
 	nav_agent.target_position = pos
 	target_changed.emit(nav_agent.target_position)
 
-# Stop movement
+
 func stop() -> void:
 	if velocity == Vector2.ZERO:
 		return
 	nav_agent.set_velocity(Vector2.ZERO)
 
-# Play an animation if it exists
+
+# Always called by states
 func apply_animation(anim_name: String) -> void:
-	if sprite and sprite.sprite_frames.has_animation(anim_name):
+	if sprite.sprite_frames.has_animation(anim_name):
 		sprite.play(anim_name)
 	else:
 		print_debug("Sprite node doesn't have animation %s!" % anim_name)
 
-# Setter for health, updates HUD
+
+# Health is modified by the state machine, which will eventually trigger
+# the 'die' state if health goes to zero
 func set_health(value: int) -> void:
 	health = max(0, value)
+	# this is needed because health is an exported variable set in the inspector,
+	# which means this setter gets called before the scene is ready.
+	# In other words, the onready variables referencing nodes won't have been
+	# initialied the first time this setter gets called. For more info, see
+	# https://docs.godotengine.org/en/stable/tutorials/best_practices/godot_notifications.html#init-vs-initialization-vs-export
 	if is_instance_valid(hud):
 		hud.healthbar.value = health
 
-# Calculate smooth rotation using interpolation
+
+# Used to make the enemy rotate to face its current direction,
+# with the specified rotation speed and using interpolation
 func _calculate_rot(start_rot: float, target_rot: float, _speed: float, delta: float) -> float:
 	return lerp_angle(start_rot, target_rot, _speed * delta)
 
-# Handle velocity computed by NavigationAgent2D
+
+# Emitted by NavigationAgent2D.set_velocity, which can be called by any 
+# State class. Sets the desired velocity and makes the enemy move
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
-	var collision = move_and_slide()
-	
-	# Check for collision and reverse
+	move_and_slide()
+
+
+func _on_state_machine_state_changed(states_stack: Array) -> void:
+	hud.state_label.text = (states_stack[0] as State).name
