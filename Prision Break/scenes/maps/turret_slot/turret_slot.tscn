@@ -33,7 +33,6 @@ position = Vector2(-61, 59)
 visible = false
 
 [node name="TurretActions" parent="UI" instance=ExtResource("4_hrs4w")]
-visible = false
 offset_left = 88.0
 offset_top = -248.0
 offset_right = 249.0

@@ -132,7 +132,7 @@ offset_bottom = -150.0
 
 [node name="Gun" parent="Shooter" index="0"]
 sprite_frames = SubResource("SpriteFrames_pwnph")
-frame_progress = 0.857495
+frame_progress = 0.76737
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_e6dea")
