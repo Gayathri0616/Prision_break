@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cg6u8ddu5ny22" path="res://interfaces/UI/turret_actions/assets/textures/remove.png" id="4_15aaq"]
 
 [node name="TurretActions" type="VBoxContainer"]
-visible = false
 offset_top = -240.0
 offset_right = 161.0
 offset_bottom = 245.0
@@ -14,19 +13,16 @@ theme = ExtResource("1_2ya1b")
 theme_override_constants/separation = 10
 
 [node name="Replace" type="Button" parent="."]
-visible = false
 layout_mode = 2
 icon = ExtResource("2_lf7n4")
 icon_alignment = 1
 
 [node name="Repair" type="Button" parent="."]
-visible = false
 layout_mode = 2
 icon = ExtResource("3_3xbmb")
 icon_alignment = 1
 
 [node name="Remove" type="Button" parent="."]
-visible = false
 layout_mode = 2
 icon = ExtResource("4_15aaq")
 icon_alignment = 1

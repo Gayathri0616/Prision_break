@@ -280,7 +280,6 @@ animations = [{
 radius = 1000.0
 
 [node name="MissileTurret" instance=ExtResource("1_46fx6")]
-health = 200.0
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-8, 0)

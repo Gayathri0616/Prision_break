@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://q3ewy63w2x0m"]
+[gd_scene load_steps=20 format=3 uid="uid://q3ewy63w2x0m"]
 
 [ext_resource type="Script" uid="uid://gkccrf24sf1p" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_nf4vx"]
@@ -14,6 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://orirghhsn0xs" path="res://entities/turrets/single/assets/textures/gun_shoot_06.png" id="11_lja6c"]
 [ext_resource type="Texture2D" uid="uid://pidagis5t7y5" path="res://entities/turrets/single/assets/textures/gun_shoot_07.png" id="12_kj0np"]
 [ext_resource type="PackedScene" uid="uid://x6ivhnvyfp45" path="res://entities/explosion_vfx/explosion.tscn" id="13_iceo6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wlmh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o87d8"]
 resource_local_to_scene = true
@@ -99,7 +108,15 @@ metadata/_edit_group_ = true
 
 [node name="Basement" type="Sprite2D" parent="."]
 visible = false
+light_mask = 3
 texture = ExtResource("2_nf4vx")
+
+[node name="Move" type="AnimatedSprite2D" parent="Basement"]
+show_behind_parent = true
+top_level = true
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_2wlmh")
+animation = &"Move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -114,12 +131,12 @@ detector_color = Color(0, 0, 1, 0.0980392)
 [node name="Gun" parent="Shooter" index="0"]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_lyc1n")
-frame_progress = 0.319922
+frame_progress = 0.0845959
 offset = Vector2(7, -2)
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_7qxgd")
-frame_progress = 0.933732
+frame_progress = 0.852103
 
 [node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
 shape = SubResource("CircleShape2D_2wlmh")
