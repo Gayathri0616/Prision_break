@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b6kmujg0y0n7k" path="res://scenes/maps/objective/assets/textures/tower_die_37.png" id="39_2160v"]
 [ext_resource type="Texture2D" uid="uid://blpvmxaq11bum" path="res://scenes/maps/objective/assets/textures/tower_die_38.png" id="40_gyhcc"]
 [ext_resource type="Texture2D" uid="uid://dp3wh4k8j7im6" path="res://scenes/maps/objective/assets/textures/tower_die_39.png" id="41_tvigi"]
-[ext_resource type="Texture2D" uid="uid://cj86v2tbg11pi" path="res://scenes/maps/objective/assets/textures/wmremove-transformed-removebg-preview (1).png" id="42_45h0l"]
+[ext_resource type="Texture2D" uid="uid://cj2o6w27w4hp7" path="res://scenes/maps/objective/assets/textures/20250609_131254.png" id="42_45h0l"]
 [ext_resource type="PackedScene" uid="uid://x6ivhnvyfp45" path="res://entities/explosion_vfx/explosion.tscn" id="43_ouhuc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_coix1"]
