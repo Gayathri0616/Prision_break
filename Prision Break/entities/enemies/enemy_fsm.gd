@@ -10,12 +10,7 @@ extends StateMachine
 const STATES_STACK_COUNT := 2
 
 
-# We need to add states to states_map. It will look like this:
-#	states_map = {
-#		"move": $Move,
-#		"idle": $Idle,
-#		"hit": $Hit,
-#	}
+#We need to add states to states_map. It will look like this:
 func _ready() -> void:
 	super()
 	for node in get_children():

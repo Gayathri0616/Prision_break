@@ -23,7 +23,7 @@ var type: String:
 var move_direction := 1.0
 var base_position := Vector2.ZERO
 var patrol_distance := MOVE_STEP * 2  # Total patrol range of 2 steps
-var selected := false  # New variable to track turret selection
+var selected := false  # Track turret selection
 
 func _ready() -> void:
 	base_position = global_position
@@ -31,14 +31,10 @@ func _ready() -> void:
 	if sprite and sprite.sprite_frames.has_animation("move"):
 		sprite.play("move")
 	if basement:
-		basement.visible = true  # Ensure basement is visible at start
-		print("Basement node found at: ", basement.get_path(), " visibility: ", basement.visible)
-		for child in basement.get_children():
-			if child is CanvasItem:
-				child.visible = true
-				print("Child node ", child.name, " visibility set to: ", child.visible)
+		basement.visible = true
+		print("Basement node found at: ", basement.get_path(), " initial visibility: ", basement.visible, " is class: ", basement.get_class())
 	else:
-		print("Basement node not found!")
+		print("Error: Basement node not found at path $Basement! Check scene hierarchy.")
 	hud.state_label.hide()
 	hud.healthbar.max_value = health
 	hud.healthbar.value = health
@@ -48,42 +44,21 @@ func _physics_process(delta: float) -> void:
 		sprite.play("move")
 	if shooter.targets and shooter.can_shoot and shooter.lookahead.is_colliding():
 		shooter.shoot()
-	move_turret(delta)  # Calculate movement
+	move_turret(delta)
 	if velocity.length() > 0:
 		move_and_slide()
 		print("Moved to: ", global_position)
 	else:
 		print("Velocity is zero, no movement")
-	# Force movement if stuck
-	var current_offset := global_position.x - base_position.x
-	if abs(current_offset) < 0.1 and velocity.length() == 0:  # Stuck check
-		velocity = Vector2(MOVE_SPEED * delta * move_direction, 0.0)
-		move_and_slide()
-		print("Forced movement applied")
-	# Hide/Show basement based on selection or movement
-	if basement:
-		if selected or abs(current_offset) >= 5.0:  # Hide when selected or moved 5 units
-			basement.visible = false
-			for child in basement.get_children():
-				if child is CanvasItem:
-					child.visible = false
-			print("Basement hidden, selected: ", selected, " offset: ", current_offset, " path: ", basement.get_path())
-		elif not selected and abs(current_offset) <= 1.0:  # Show when deselected and close to base
-			basement.visible = true
-			for child in basement.get_children():
-				if child is CanvasItem:
-					child.visible = true
-			print("Basement shown, selected: ", selected, " offset: ", current_offset, " path: ", basement.get_path())
-	print("Physics process running, direction: ", move_direction)
+	# Removed basement visibility toggling here to prevent awkward flashing
 
 func move_turret(delta: float) -> void:
 	print("Attempting to move turret")
 	var move_amount := MOVE_SPEED * delta * move_direction
 	velocity = Vector2(move_amount, 0.0)
 	print("Setting velocity: ", velocity)
-	# Check patrol boundaries based on base_position
 	var current_offset := global_position.x - base_position.x
-	if abs(current_offset) >= patrol_distance:  # Reverse at patrol boundary
+	if abs(current_offset) >= patrol_distance:
 		move_direction *= -1.0
 		print("Reversed direction to: ", move_direction)
 		if sprite and sprite.sprite_frames.has_animation("move"):
@@ -91,7 +66,9 @@ func move_turret(delta: float) -> void:
 
 func set_selected(value: bool) -> void:
 	selected = value
-	print("Turret selection changed to: ", selected)
+	if basement:
+		basement.visible = not value  # Hide basement when selected, show when deselected
+	print("Turret selection changed to: ", selected, " Basement visible: ", basement.visible)
 
 func remove() -> void:
 	var health_perc: float = hud.healthbar.value / hud.healthbar.max_value
