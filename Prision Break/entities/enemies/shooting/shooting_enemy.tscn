@@ -136,6 +136,7 @@ frame_progress = 0.76737
 
 [node name="MuzzleFlash" parent="Shooter" index="1"]
 sprite_frames = SubResource("SpriteFrames_e6dea")
+frame_progress = 0.0
 
 [node name="Detector" parent="Shooter" index="2"]
 collision_mask = 18
