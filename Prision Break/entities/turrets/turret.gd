@@ -5,7 +5,7 @@ signal turret_disabled
 
 const FADE_OUT_DURATION := 0.25
 const MOVE_STEP := 32.0  # 2 steps total patrol distance (32 units each way)
-const MOVE_SPEED := 200.0  # Increased for testing
+const MOVE_SPEED := 200.0  # Speed for testing
 
 @export_range(1, 500) var health: int = 100:
 	set = set_health
@@ -17,58 +17,78 @@ var type: String:
 @onready var shooter := $Shooter as Shooter
 @onready var explosion := $Explosion as AnimatedSprite2D
 @onready var hud := $UI/EntityHUD as EntityHud
-@onready var sprite := $Basement/Move as AnimatedSprite2D  # Matches renamed node
-@onready var basement := $Basement as Node2D  # Reference to the Basement node
+@onready var sprite := $Basement/Move as AnimatedSprite2D  # Animation node
+@onready var basement := $Basement as Node2D  # Basement node (base idle)
+@onready var status_label := $UI/StatusLabel as Label if has_node("UI/StatusLabel") else null  # Optional label
 
 var move_direction := 1.0
 var base_position := Vector2.ZERO
-var patrol_distance := MOVE_STEP * 2  # Total patrol range of 2 steps
+var patrol_distance := MOVE_STEP * 2  # Total patrol range of 64 units
 var selected := false  # Track turret selection
+var is_moving := false  # Track if animation should play
 
 func _ready() -> void:
 	base_position = global_position
-	print("Base position set to: ", base_position)
-	if sprite and sprite.sprite_frames.has_animation("move"):
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("move"):
+		is_moving = true
 		sprite.play("move")
+	else:
+		print("Error: Move animation not found or sprite node invalid at path $Basement/Move!")
 	if basement:
 		basement.visible = true
-		print("Basement node found at: ", basement.get_path(), " initial visibility: ", basement.visible, " is class: ", basement.get_class())
 	else:
-		print("Error: Basement node not found at path $Basement! Check scene hierarchy.")
+		print("Error: Basement node not found at path $Basement!")
+	if status_label:
+		print("Status label found at: ", status_label.get_path())
 	hud.state_label.hide()
 	hud.healthbar.max_value = health
 	hud.healthbar.value = health
+	if not is_connected("input_event", _on_input_event):
+		var error = connect("input_event", _on_input_event)
+		if error == OK:
+			print("Input event signal connected successfully")
+		else:
+			print("Failed to connect input event signal, error code: ", error)
 
 func _physics_process(delta: float) -> void:
-	if sprite and sprite.sprite_frames.has_animation("move"):
+	if sprite and is_moving and not sprite.is_playing():
 		sprite.play("move")
 	if shooter.targets and shooter.can_shoot and shooter.lookahead.is_colliding():
 		shooter.shoot()
 	move_turret(delta)
 	if velocity.length() > 0:
 		move_and_slide()
-		print("Moved to: ", global_position)
 	else:
 		print("Velocity is zero, no movement")
-	# Removed basement visibility toggling here to prevent awkward flashing
 
 func move_turret(delta: float) -> void:
-	print("Attempting to move turret")
 	var move_amount := MOVE_SPEED * delta * move_direction
 	velocity = Vector2(move_amount, 0.0)
-	print("Setting velocity: ", velocity)
 	var current_offset := global_position.x - base_position.x
 	if abs(current_offset) >= patrol_distance:
 		move_direction *= -1.0
-		print("Reversed direction to: ", move_direction)
-		if sprite and sprite.sprite_frames.has_animation("move"):
+		if sprite and is_moving:
 			sprite.play("move")
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		selected = !selected
+		set_selected(selected)
+		print("Input event: Turret clicked, selected: ", selected, " Basement visible: ", basement.visible if basement else "N/A")
+
+func _on_turret_popup_requested(_type: String) -> void:
+	set_selected(true)
+	print("Turret popup requested, set_selected(true) called, Basement visible: ", basement.visible if basement else "N/A")
 
 func set_selected(value: bool) -> void:
 	selected = value
 	if basement:
-		basement.visible = not value  # Hide basement when selected, show when deselected
-	print("Turret selection changed to: ", selected, " Basement visible: ", basement.visible)
+		basement.visible = not value
+		for child in basement.get_children():
+			if child is CanvasItem:
+				child.visible = not value
+	if status_label:
+		status_label.visible = not value
 
 func remove() -> void:
 	var health_perc: float = hud.healthbar.value / hud.healthbar.max_value
