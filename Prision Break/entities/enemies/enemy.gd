@@ -39,8 +39,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_wall() or is_on_ceiling() or is_on_floor():
-		_recalculate_path()
-		print("Collision detected")
+		_handle_collision()
+		print("Collision detected with wall/ceiling/floor at ", global_position)
 
 func move_to(pos: Vector2) -> void:
 	target_position = pos
@@ -74,6 +74,24 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 
 func _on_state_machine_state_changed(states_stack: Array) -> void:
 	hud.state_label.text = (states_stack[0] as State).name
+
+func _handle_collision() -> void:
+	# Back off by moving slightly in the opposite direction of the current velocity
+	var backoff_distance := 10.0
+	var backoff_position := global_position - (velocity.normalized() * backoff_distance)
+	nav_agent.target_position = backoff_position
+	print("Collision handled, new target: ", backoff_position)
+	
+	# Recalculate path to ensure a valid route
+	_recalculate_path()
+	
+	# Optional: Add a small delay or check to avoid infinite loops
+	await get_tree().create_timer(0.1).timeout
+	if is_on_wall() or is_on_ceiling() or is_on_floor():
+		# If still colliding, try reversing direction completely
+		nav_agent.target_position = global_position - (global_position.direction_to(target_position) * backoff_distance * 2)
+		print("Still colliding, reversed direction to: ", nav_agent.target_position)
+		_recalculate_path()
 
 func _recalculate_path() -> void:
 	if target_position != Vector2.ZERO:

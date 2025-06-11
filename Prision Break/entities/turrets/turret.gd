@@ -26,29 +26,32 @@ var base_position := Vector2.ZERO
 var patrol_distance := MOVE_STEP * 2  # Total patrol range of 64 units
 var selected := false  # Track turret selection
 var is_moving := false  # Track if animation should play
+var instance_id := str(get_instance_id())  # Unique ID for debugging
 
 func _ready() -> void:
 	base_position = global_position
+	print("Turret ", instance_id, " initialized at ", global_position)
 	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("move"):
 		is_moving = true
 		sprite.play("move")
 	else:
-		print("Error: Move animation not found or sprite node invalid at path $Basement/Move!")
+		print("Error: Move animation not found or sprite node invalid at path $Basement/Move for turret ", instance_id)
 	if basement:
 		basement.visible = true
+		print("Turret ", instance_id, " basement visible: ", basement.visible)
 	else:
-		print("Error: Basement node not found at path $Basement!")
+		print("Error: Basement node not found at path $Basement! for turret ", instance_id)
 	if status_label:
-		print("Status label found at: ", status_label.get_path())
+		print("Turret ", instance_id, " status label found at: ", status_label.get_path())
 	hud.state_label.hide()
 	hud.healthbar.max_value = health
 	hud.healthbar.value = health
 	if not is_connected("input_event", _on_input_event):
 		var error = connect("input_event", _on_input_event)
 		if error == OK:
-			print("Input event signal connected successfully")
+			print("Turret ", instance_id, " input event signal connected successfully")
 		else:
-			print("Failed to connect input event signal, error code: ", error)
+			print("Turret ", instance_id, " failed to connect input event signal, error code: ", error)
 
 func _physics_process(delta: float) -> void:
 	if sprite and is_moving and not sprite.is_playing():
@@ -59,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		move_and_slide()
 	else:
-		print("Velocity is zero, no movement")
+		print("Turret ", instance_id, " velocity is zero, no movement")
 
 func move_turret(delta: float) -> void:
 	var move_amount := MOVE_SPEED * delta * move_direction
@@ -74,21 +77,28 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		selected = !selected
 		set_selected(selected)
-		print("Input event: Turret clicked, selected: ", selected, " Basement visible: ", basement.visible if basement else "N/A")
+		print("Turret ", instance_id, " input event: clicked, selected: ", selected, " Basement visible: ", basement.visible if basement else "N/A")
 
 func _on_turret_popup_requested(_type: String) -> void:
-	set_selected(true)
-	print("Turret popup requested, set_selected(true) called, Basement visible: ", basement.visible if basement else "N/A")
+	print("Turret ", instance_id, " received turret_popup_requested signal, current selected: ", selected)
+	if not selected:
+		set_selected(true)
+		print("Turret ", instance_id, " set_selected(true) called from popup, Basement visible: ", basement.visible if basement else "N/A")
+	else:
+		print("Turret ", instance_id, " already selected, skipping set_selected in popup request")
 
 func set_selected(value: bool) -> void:
 	selected = value
+	print("Turret ", instance_id, " set_selected to ", value)
 	if basement:
 		basement.visible = not value
 		for child in basement.get_children():
 			if child is CanvasItem:
 				child.visible = not value
+				print("Turret ", instance_id, " child ", child.name, " visibility set to: ", child.visible)
 	if status_label:
 		status_label.visible = not value
+		print("Turret ", instance_id, " status label visibility set to: ", status_label.visible)
 
 func remove() -> void:
 	var health_perc: float = hud.healthbar.value / hud.healthbar.max_value
